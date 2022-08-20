@@ -1,0 +1,26 @@
+<div class="input-field">
+  <label class="label">{{ label }}</label>
+  <input
+    class="input"
+    [formControl]="control"
+    [ngClass]="{ 'is-danger': control.errors && control.touched }"
+    mask="{{ maskPattern }}"
+  />
+  <ng-container *ngIf="control.errors && control.touched">
+    <div *ngIf="control.errors['required']" class="help is-danger">
+      value is required
+    </div>
+    <ng-container *ngIf="control.errors['pattern']">
+      <div
+        *ngIf="control.errors['pattern'].actualValue != null"
+        class="help is-danger"
+      >
+        Invalid input
+      </div>
+    </ng-container>
+    <div *ngIf="control.errors['minlength']" class="help is-danger">
+      minimum {{ control.errors["minlength"].requiredLength }} characters
+      required but provided {{ control.errors["minlength"].actualLength }}
+    </div>
+  </ng-container>
+</div>

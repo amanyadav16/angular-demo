@@ -1,0 +1,37 @@
+<div class="form-container">
+  <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+    <app-input
+      [control]="cardForm.controls.name" [label]="'Name'" [maskPattern]="'S*'"
+    ></app-input>
+    <app-input
+      [control]="cardForm.controls.cardNo" [label]="'Card Number'" [maskPattern]="'0000-0000-00'"
+    ></app-input>
+    <app-input
+      [control]="cardForm.controls.expiry"
+      [label]="'expiry date'"
+      [maskPattern]="'00/00'"
+    ></app-input>
+    <app-input
+      [control]="cardForm.controls.cvv"
+      [label]="'CVV'"
+      [maskPattern]="'000'"
+    ></app-input>
+    <button 
+      type="submit"
+      [disabled]="cardForm.invalid"
+      class="button is-primary"
+    >
+      submit
+    </button>
+    <button type="button" (click)="onReset()" class="button is-warning">
+      reset
+    </button>
+  </form>
+  <br /><br /><br />
+  <div>Form content : {{ cardForm.value | json }}</div>
+  <div>form valit : {{ cardForm.valid }}</div>
+  <div>
+    name errors : {{ cardForm.get("name")?.errors | json }}
+  </div>
+</div>
+
