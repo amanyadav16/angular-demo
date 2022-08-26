@@ -3,3 +3,7 @@
 .highlightText {
     background: yellow;
 }
+body{
+    padding-left:10%;
+    width: 70%;
+}
