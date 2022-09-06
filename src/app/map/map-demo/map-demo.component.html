@@ -1,0 +1,11 @@
+<div class="control has-icons-left" style="margin-left: 20px; margin-top:20px;">
+  <div class="select">
+    <select (change)="onClick($any($event.target).value)">
+      <option value="null" disabled selected>Indian cities</option>
+      <option *ngFor="let cdata of data" [value]="cdata | json" >{{cdata.city}}</option>
+    </select>
+  </div>
+  <div class="icon is-small is-left">
+    <i class="fas fa-globe"></i>
+  </div>
+</div>

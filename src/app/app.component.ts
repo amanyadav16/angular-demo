@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'demo';
-  sString:string='';
-  onInput(value:string){
-      this.sString=value;
-     console.log(this.sString);     
-  }
+   title = 'demo';
 }
