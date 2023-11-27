@@ -11,4 +11,5 @@ import { CommonModule } from '@angular/common';
 export class ChildComponent {
 
   days=['Monday','Tuesday','Wednesday','Friday','Saturday','Sunday'];
+ //days=[];
 }
